@@ -58,8 +58,13 @@ Now testing
 	Traceback (most recent call last):
 	ValueError: cannot convert float NaN to integer
 
-
+	
 	>>> add_integer(55, None)
 	Traceback (most recent call last):
 		...
 	TypeError: b must be an integer
+
+	
+	>>> add_integer(26, float('nan'))
+	Traceback (most recent call last):
+	ValueError: cannot convert float NaN to integer
