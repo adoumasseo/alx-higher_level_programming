@@ -60,7 +60,10 @@ class Rectangle:
         if self.perimeter() == 0:
             return ""
         else:
-            return "\n".join([Rectangle.print_symbol * self.width for i in range(0, self.height)])
+            return "\n".join([
+                str(self.print_symbol) * self.width
+                for i in range(0, self.height)
+            ])
 
     def __repr__(self):
         """Return string representation of our rectangle"""
