@@ -9,7 +9,7 @@ Now palce for test
 		>>> MyList = __import__('1-my_list').MyList
 
 	Checking for inherance
-		>>> mylist = Mylist()
+		>>> mylist = MyList()
 		>>> isinstance(mylist, list)
 		True
 
