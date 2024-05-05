@@ -1,7 +1,7 @@
 ===========================================
 Test for my sorted module ``1-my_list.py``
 ===========================================
-``1-my_list.py`` is a module that contains a class inherit from a list
+``1-my_list.py`` is a module that contains a class inherit a list
 and a method to print a sort ascending version of a list without modifiying the originals
 Now palce for test
 ::
