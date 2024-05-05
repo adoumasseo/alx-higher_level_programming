@@ -1,0 +1,60 @@
+===========================================
+Test for my sorted module ``1-my_list.py``
+===========================================
+``1-my_list.py`` is a module that contains a class inherit from a list
+and a method to print a sort ascending version of a list without modifiying the originals
+Now palce for test
+::
+	Importing Module
+		>>> MyList = __import__('1-my_list').MyList
+
+	Checking for inherance
+		>>> mylist = Mylist()
+		>>> isinstance(mylist, list)
+		True
+
+	Checking for empty list
+		>>> a = MyList()
+		>>> a
+		[]
+		>>> a.print_sorted()
+		[]
+	
+	Checking for already sorted list
+		>>> a = MyList()
+		>>> a.append(1)
+		>>> a.append(2)
+		>>> a.append(3)
+		>>> a.append(4)
+		>>> a
+		[1, 2, 3, 4]
+		>>> a.print_sorted()
+		[1, 2, 3, 4]
+
+	Checking for list with redundancy
+		>>> a = MyList()
+		>>> a.append(1)
+		>>> a.append(1)
+		>>> a.append(2)
+		>>> a.append(1)
+		>>> a.append(2)
+		>>> a.append(3)
+		>>> a
+		[1, 1, 2, 1, 2, 3]
+		>>> a.print_sorted()
+		[1, 1, 1, 2, 2, 3]
+
+	Checking for negative and positive value and redundancy
+		>>> a = MyList()
+		>>> a.append(-1)
+		>>> a.append(1)
+		>>> a.append(-10)
+		>>> a.append(2)
+		>>> a.append(50)
+		>>> a.append(0)
+		>>> a.append(-3)
+		>>> a.append(2)
+		>>> a
+		[-1, 1, -10, 2, 50, 0, -3, 2]
+		>>> a.print_sorted()
+		[-10, -3, -1, 0, 1, 2, 2, 50]
