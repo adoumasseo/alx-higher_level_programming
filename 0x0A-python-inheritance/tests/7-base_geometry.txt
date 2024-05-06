@@ -1,0 +1,52 @@
+===========================================
+Test for my sorted module ``7-base_geometry.py``
+===========================================
+``7-base_geometry.py`` is a module that contains a class BaseGeometry with two
+instance methods to define an area and to validate an value.
+Let's test them
+::
+	Importing Module
+		>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+	Creating an instance
+		>>> myFigure = BaseGeometry()
+		>>> print(myFigure) #doctest: +ELLIPSIS
+		<7-base_geometry.BaseGeometry object at 0x...>
+	
+	Checking for area()
+		>>> myFigure = BaseGeometry()
+		>>> myFigure.area()
+		Traceback (most recent call last):
+			...
+		Exception: area() is not implemented
+
+
+	NOW LET CHECK integer_validator()
+
+	Checking with no args:
+		>>> myFigure = BaseGeometry()
+		>>> myFigure.integer_validator()
+		Traceback (most recent call last):
+			...
+		TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+	
+	Checking for bad value of value :):
+		>>> myFigure = BaseGeometry()
+		>>> myFigure.integer_validator("name", [1, 2, 3])
+		Traceback (most recent call last):
+			...
+		TypeError: name must be an integer
+
+		>>> myFigure.integer_validator("name", 0)
+		Traceback (most recent call last):
+			...
+		ValueError: name must be greater than 0
+
+		>>> myFigure.integer_validator("name", -5)
+		Traceback (most recent call last):
+			...
+		ValueError: name must be greater than 0
+	
+	Checking for good value of value :):
+		>>> myFigure = BaseGeometry()
+		>>> myFigure.integer_validator("name", 5)
