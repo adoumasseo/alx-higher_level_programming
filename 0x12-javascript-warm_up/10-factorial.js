@@ -1,9 +1,9 @@
 #!/usr/bin/node
-const factorial = (n) => {
-  if (isNaN(n) || n === 0 || n === 1) {
+function fact (n) {
+  if (!n) {
     return 1;
   } else {
-    return n * factorial(n - 1);
+    return n * fact(n - 1);
   }
-};
-console.log(factorial(parseInt(process.argv[2])));
+}
+console.log(fact(parseInt(process.argv[2])));
