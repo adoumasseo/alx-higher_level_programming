@@ -17,4 +17,4 @@ if __name__ == "__main__":
     data = data.encode('ascii')
     request = urllib.request.Request(url, data)
     with urllib.request.urlopen(request) as res:
-        print('Your email is : {}'.format(sys.argv[2]))
+        print(res.__dict__)
