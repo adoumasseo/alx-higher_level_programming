@@ -10,8 +10,7 @@ if __name__ == "__main__":
     from urllib import request, error
     import sys
 
-    url = sys.argv[1]
-    request = urllib.request.Request(url)
+
     try:
         with request.urlopen(sys.argv[1]) as res:
             print(res.read().decode('UTF-8'))
