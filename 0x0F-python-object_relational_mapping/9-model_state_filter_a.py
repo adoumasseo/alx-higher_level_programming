@@ -17,8 +17,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
 
     session = Session()
-    first_state = session.query(State).first()
-    if first_state is None:
-        print("Nothing")
-    print('{}: {}'.format(first_state.id, first_state.name))
+    states = session.query(State).filter(State.name.like('%a%'))
+    for state in states:
+        print('{}: {}'.format(state.id, state.name))
     session.close()
